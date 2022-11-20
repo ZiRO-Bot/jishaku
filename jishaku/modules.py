@@ -15,7 +15,7 @@ import pathlib
 import typing
 
 import discord
-import pkg_resources
+import importlib.metadata
 from braceexpand import braceexpand
 from discord.ext import commands
 
@@ -92,10 +92,7 @@ def package_version(package_name: str) -> typing.Optional[str]:
     Returns package version as a string, or None if it couldn't be found.
     """
 
-    try:
-        return pkg_resources.get_distribution(package_name).version
-    except (pkg_resources.DistributionNotFound, AttributeError):
-        return None
+    return importlib.metadata.version(package_name)
 
 
 class ExtensionConverter(_ExtensionConverterBase):  # pylint: disable=too-few-public-methods

@@ -1,9 +1,9 @@
-jishaku {{ package.version }}
+jishaku {{ version }}
 
-https://pypi.org/project/jishaku/{{ package.version }}/
+https://pypi.org/project/jishaku/{{ version }}/
 {{ env('GITHUB_SERVER_URL') }}/{{ env('GITHUB_REPOSITORY') }}/tree/{{ env('tag_name') }}
 
-https://jishaku.readthedocs.io/en/latest/whatsnew.html#version-{{ package.version.replace('.', '-') }}
+https://jishaku.readthedocs.io/en/latest/whatsnew.html#version-{{ version.replace('.', '-') }}
 
 Built by {{ env('GITHUB_SERVER_URL') }}/{{ env('GITHUB_REPOSITORY') }}/actions/runs/{{ env('GITHUB_RUN_ID') }} (triggered by {{ env('GITHUB_ACTOR') }})
 
@@ -18,7 +18,7 @@ pip install -U jishaku
 
 Install specifically this version of jishaku (not recommended):
 ```bash
-pip install -U jishaku=={{ package.version }}
+pip install -U jishaku=={{ version }}
 ```
 
 Artifacts are included with this release for debugging convenience.
